@@ -1,0 +1,103 @@
+version: '2'
+services:
+  config-server:
+    build: config-server
+    image: config-server:1.0.0
+    container_name: config-server
+    restart: always
+    ports:
+      - 8888:8888
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+
+  # mongo:
+  #   image: mongo
+  #   container_name: mongo
+  #   restart: always
+  #   volumes:
+  #     - $HOME/mongo:/data/db
+  mongo:
+    image: mongo:3.4-xenial
+    ports:
+        - 27017:27017
+    container_name: mongo-docker
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    container_name: rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - 15672:15672
+      - 8045:5762
+ 
+  user-management:
+    build: user-management
+    image: user-management:1.0.0
+    container_name: user-management
+    restart: always
+    depends_on:
+      - mysql
+      - rabbitmq
+      - config-server
+      - eureka-server
+    links:
+      - mysql
+      - rabbitmq
+      - config-server
+      - eureka-server
+  content-service:
+      build: content-service
+      container_name: content-service
+      restart: always
+      depends_on:
+        - mongo
+        - rabbitmq
+        - config-server
+        - eureka-server
+      links:
+        - mongo
+        - rabbitmq
+        - config-server
+        - eureka-server
+      ports:
+        - 8082:8082
+      expose:
+        - 8082
+
+  eureka-server:
+    build: eureka-server
+    image: eureka-server:1.0.0
+    container_name: eureka-server
+    ports:
+      - 8085:8085
+
+
+  
+
+  api-gateway:
+    build: api-gateway
+    image: api-gateway:1.0.0
+    container_name: api-gateway
+    restart: always
+    depends_on:
+      - eureka-server
+      - user-management
+    ports:
+      - 8080:8080
+    links:
+      - user-management
+      - eureka-server
+
+ 
+  
+
+
+

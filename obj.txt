@@ -1,0 +1,15 @@
+{
+	 "username" : "12345",
+     "password" : "12345",
+     "firstName" : "12345",
+     "lastName" : "12345",
+     "dob" : "12345",
+     "role" : "12345",
+     "email" : "12345",
+     "phoneNumber" : "12345",
+     "gender" : "12345",
+     "nationality" : "12345",
+     "addressLine1" : "12345",
+     "addressLine2" : "12345",
+     "addressLine3" : "12345"
+}

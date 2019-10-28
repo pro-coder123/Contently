@@ -1,0 +1,101 @@
+<div style="background-image: url('../../assets/images/069 Purple Division.png');" class="container-fluid"  id="dashboard-section">
+    <br>
+    <b><h1 style = "color:white" class="text-center mb-3">My Dashboard</h1></b>
+    <div class="row dashboard-buttons">
+        <div class="col-xs-2">
+          <ul class="site-menu main-menu site-menu-dark js-clone-nav  d-none d-lg-block m-0 p-0">
+            <li class="cta"><a href="#dashboard-section" class="nav-link"><span>Upload</span></a></li>
+          </ul></div>
+          <div class="col-xs-2">
+          <ul class="site-menu main-menu site-menu-dark js-clone-nav  d-none d-lg-block m-0 p-0">
+              <li class="cta"><a href="#dashboard-section" class="nav-link"><span>Editor</span></a></li>
+            </ul></div>
+          </div><br>
+   
+      <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner row w-100 mx-auto">
+        <div class="carousel-item col-md-4 active">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f44242/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Book 1</h4>
+              <p class="card-text">Views : 24</p>
+              <p class="card-text">Rating : 4/5</p>
+              <a href="#" class="btn btn-primary">Edit file</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/418cf4/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Book 2</h4>
+              <p class="card-text">Views : 45</p>
+              <p class="card-text">Rating : 3/5</p>
+              <a href="#" class="btn btn-primary">Edit file</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/3ed846/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Book 3</h4>
+              <p class="card-text">Views : 55</p>
+              <p class="card-text">Rating : 4.5/5</p>
+              <a href="#" class="btn btn-primary">Edit</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 7</h4>
+              <p class="card-text">Views : 55</p>
+              <p class="card-text">Rating : 4.5/5</p>
+              <a href="#" class="btn btn-primary">Edit file</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+  
+    </div> 
+    <br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="Title">
+          <th mat-header-cell *matHeaderCellDef> Book Title </th>
+          <td mat-cell *matCellDef="let element"> {{element.Title}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Views">
+          <th mat-header-cell *matHeaderCellDef> Views </th>
+          <td mat-cell *matCellDef="let element"> {{element.Views}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Rating">
+          <th mat-header-cell *matHeaderCellDef> Rating </th>
+          <td mat-cell *matCellDef="let element"> {{element.Rating}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <br>
+  </div>

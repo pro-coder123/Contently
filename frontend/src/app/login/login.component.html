@@ -1,0 +1,15 @@
+<form action="" method="post" class="form-box">
+    <h3 class="h4 text-black mb-4">Login</h3>
+    <mat-form-field>
+            <input #username matInput placeholder="Username" class="col">
+          </mat-form-field>
+          <mat-form-field>
+                <input #password matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+    <button mat-button (click) = "authenticate(username.value, password.value)">Login</button>
+    <h2 *ngIf = "fail">Login failed</h2> 
+
+  </form>

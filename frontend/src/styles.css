@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+ @import "https://fonts.googleapis.com/css?family=Muli:300,400,700,900";
+@import "fonts/icomoon/style.css";
+
+@import "css/bootstrap.min.css";
+@import "css/jquery-ui.css";
+@import "css/owl.carousel.min.css";
+@import "css/owl.theme.default.min.css";
+@import "css/owl.theme.default.min.css";
+
+@import "css/jquery.fancybox.min.css";
+
+@import "css/bootstrap-datepicker.css";
+
+@import "fonts/flaticon/font/flaticon.css";
+
+@import "css/aos.css";
+
+
+@import "css/style.css";
+
+/* @import "css/style_new.css"; */
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

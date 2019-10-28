@@ -1,0 +1,111 @@
+
+ <div   style="background-image: url('../../assets/images/069 Purple Division.png');" class="register-component site-section bg-light" id="contact-section">
+  <div class="container">
+
+    <!-- <div class="row justify-content-center">
+      <div class="col-md-7">
+
+
+        
+        <h2 class="section-title mb-3">Register Here</h2>
+    
+
+        <form action="" method="post" class="form-box">
+            
+                    <div class="form-group">
+              <input #username type="text" class="form-control" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <input #password type="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input #firstname type="text" class="form-control" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                <input #lastname type="text" class="form-control" placeholder="Last Name">
+              </div>
+              <div class="form-group">
+                <input #dob type="text" class="form-control" placeholder="Date of birth">
+              </div>
+              <div class="form-group">
+                <input #email type="text" class="form-control" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input #contact type="number" class="form-control" placeholder="Contact No.">
+              </div>
+              <div class="form-group">
+                <input #gender type="text" class="form-control" placeholder="Gender">
+              </div>
+              <div class="form-group">
+                <input #nationality type="text" class="form-control" placeholder="Nationality">
+              </div>
+              <div class="form-group">
+                <input #address1 type="text" class="form-control" placeholder="Address line 1">
+              </div>
+              <div class="form-group">
+                <input #address2 type="text" class="form-control" placeholder="Address line 2">
+              </div>
+              <div class="form-group">
+                <input #address3 type="text" class="form-control" placeholder="Address line 3">
+              </div>
+            <div class="form-group">
+              <input (click) = "register(username.value, password.value, firstname.value, lastname.value, email.value, contact.value, gender.value, nationality.value, address1.value, address2.value, address3.value, dob.value)"type="submit" class="btn btn-primary btn-pill" value="Register">
+            </div>
+          </form>
+          <br>
+         
+      </div>
+    </div> -->
+
+    <div class="reg-form col-md-7">
+    <form action="" method="post" class="form-box">
+      <h3 class="h4 text-black mb-4">Register Here</h3>
+      <mat-form-field>
+              <input #username matInput placeholder="Username" class="col">
+            </mat-form-field>
+            <mat-form-field>
+                  <input #password matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <mat-form-field>
+                  <input #firstname matInput placeholder="First Name" class="col">
+                </mat-form-field>
+                <mat-form-field>
+                  <input #lastname matInput placeholder="Last Name" class="col">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                  <input #email matInput placeholder="Email" class="col">
+                </mat-form-field>
+                <mat-form-field>
+                  <input #contact matInput placeholder="Contact Number" class="col">
+                </mat-form-field>
+                <mat-form-field>
+                  <input #nationality matInput placeholder="Nationality" class="col">
+                </mat-form-field>
+                <mat-form-field>
+                  <input #gender matInput placeholder="Gender" class="col">
+                </mat-form-field>
+                  <mat-form-field>
+                  <input #address1 matInput placeholder="Address" class="col">
+                </mat-form-field>
+                <mat-form-field>
+                  <input #address2 matInput placeholder="State" class="col">
+                </mat-form-field>
+                <mat-form-field>
+                  <input #address3 matInput placeholder="Country" class="col">
+                </mat-form-field>
+      <button mat-button (click) = "register(username.value, password.value, firstname.value, lastname.value, email.value, contact.value, gender.value, nationality.value, address1.value, address2.value, address3.value, dob.value)">Register</button>
+      <h2 *ngIf = "fail">Login failed</h2> 
+  
+    </form>
+  </div>
+  <h2 *ngIf = "registerv" style="color: white">Registered Successfully</h2>
+  </div>
+</div>
